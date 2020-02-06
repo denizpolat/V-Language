@@ -1,0 +1,7 @@
+int func scan4printer()
+var a1:int;
+read a1;
+for a1:=10e1 to 100e1 by 2e0 
+print "this is a \" quoted string";
+endfor;
+endfunc

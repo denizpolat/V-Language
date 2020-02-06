@@ -1,0 +1,8 @@
+var deniz:int, cb:int[11]; var reel:real[56];
+int func compiler(ceng444:int)
+deniz:=13.05e4;
+for a[17e3+45-4] := 5e3 + 3e0*10E-23 to 456 
+deniz:= deniz+a[1e0];
+endfor;
+return deniz;
+endfunc

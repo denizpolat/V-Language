@@ -1,0 +1,6 @@
+int func kompaylir(z4r4r:int)
+deniz := 12e3 + (244 mod 12 * (1 + 2 + 3 * 4 + (1.5 - 1.5))) * 6e3 mod 34 + z4r4r div (2e1 + 354 + (12 * 12 + 5)) * (e23dr34 - 3e-21 * 34e23 mod (23e1 + 34e24));
+z4r4r := -z4r4r;
+return deniz mod z4r4r;
+endfunc
+

@@ -1,0 +1,4 @@
+var deniz:int;
+int func hello()
+a12:=13.05e4;
+endfunc

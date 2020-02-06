@@ -1,0 +1,20 @@
+var deniz:int, cb:int[32]; var reel:real;
+int func kompaylir(deniz:int)
+var duduk:real, zurna:real;
+deniz:=13.05e4;
+if zurna then de := 5e1; endif;
+% if 3 > 5 endwhile for := 5 \" comment\" """\\\
+for a[17e3+45E-4] := 5e3 * 22.0 + 3e0*10E-23 to 456e234 
+for art := 13e1 to 13e3 by 45e1
+while deniz do
+deniz:= deniz+a[1e0];
+zurna := zurna + 1e4;
+endwhile;
+endfor;
+duduk := 12e3;
+cb := 7e-12;
+if cb then de := 5e1; if cb then cb := 25e1; else cb:= 67e1; endif; endif;
+endfor;
+return deniz;
+endfunc
+

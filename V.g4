@@ -1,0 +1,87 @@
+grammar V;
+
+program : declaration_list function_list ;
+function_list : function | function_list function ;
+function : basic_type FUNC ID '(' parameter_list ')' function_body ENDFUNC ;
+function_body : declaration_list statement_list ;
+declaration_list : declaration_list declaration ';' | ;
+declaration : VAR variable_list ;
+parameter_list : ID ':' par_type | ID ':' par_type ',' parameter_list | ;
+variable_list : ID ':' type | ID ':' type ',' variable_list ;
+type : basic_type vector_extension ;
+par_type : basic_type vector_extension | basic_type '[]' ;
+num : SCIENTIFIC_NOT | FLOAT | DECIMAL ;
+basic_type : INT | REAL ;
+vector_extension : '[' DECIMAL ']' | ;
+term : factor multer ;
+multer : MULOP term | ;
+expression : term adder ;
+adder : PLUS expression | MINUS expression | ;
+factor : variable | ID '(' argument_list ')' | num | '(' expression ')' | unary_operation expression;
+unary_operation : MINUS ;
+lexpression : expression | expression RELOP expression | lexpression LOGOP lexpression | LOGOP lexpression ;
+variable : ID | ID '[' expression ']' ;
+argument_list : expression_list | ;
+expression_list : expression | expression ',' expression_list ;
+statement_list : statement ';' |  statement ';' statement_list ;
+statement : assignment_statement | return_statement | print_statement
+            | read_statement | if_statement | for_statement
+            | while_statement ;
+for_statement : FOR variable ':=' expression TO expression (BY expression)? statement_list ENDFOR ;
+if_statement : IF lexpression THEN statement_list ENDIF
+                | IF lexpression THEN statement_list ELSE statement_list ENDIF ;
+while_statement : WHILE lexpression DO statement_list ENDWHILE ;
+assignment_statement : variable ':=' expression ;
+read_items : variable | variable ',' read_items ;
+print_item : (expression | LITERAL_STRING) ;
+print_items : print_item | print_item ',' print_items ;
+return_statement : RETURN expression ;
+read_statement : READ read_items;
+print_statement : PRINT print_items ;
+
+
+/* Lexer Rules */
+fragment INTEGER : [0-9]+ ;
+fragment MULTIPLY : '*' ;
+fragment DIVIDE : '/';
+fragment DIV : 'div';
+fragment MOD : 'mod' ;
+fragment OR : 'or' ;
+fragment NOT : 'not' ;
+fragment AND : 'and' ;
+fragment GEQ : '>=' ;
+fragment LEQ : '<=' ;
+fragment EQ : '<>' | '=' ;
+fragment LESS : '<' ;
+fragment GR : '>' ;
+PLUS : '+' ;
+MINUS : '-' ;
+FUNC : 'func' ;
+ENDFUNC : 'endfunc' ;
+REAL : 'real' ;
+INT : 'int' ;
+RETURN : 'return';
+TO : 'to' ;
+BY : 'by';
+IF : 'if' ;
+THEN : 'then' ;
+ELSE : 'else' ;
+ENDIF : 'endif' ;
+ENDFOR : 'endfor' ;
+DO : 'do' ;
+PRINT : 'print' ;
+READ : 'read' ;
+WHILE : 'while' ;
+ENDWHILE : 'endwhile' ;
+FOR : 'for' ;
+VAR : 'var' ;
+MULOP : MULTIPLY | DIVIDE | MOD | DIV ;
+LOGOP : AND | NOT | OR ;
+RELOP : LEQ | GEQ | EQ | LESS | GR ;
+COMMENT : '%' ~[\t\r\n]* '\n' -> skip ;
+WS : [ \t\r\n]+ -> skip ;
+SCIENTIFIC_NOT : INTEGER+ ('.' INTEGER+)? ('E' | 'e') ('+'|'-')?  INTEGER+ ;
+FLOAT : INTEGER+ '.' INTEGER+ ;
+DECIMAL : INTEGER+ ;
+ID : [A-Za-z]([A-Za-z]|INTEGER)* ;
+LITERAL_STRING : '"' ( ~["] | '\\"')* '"' ;

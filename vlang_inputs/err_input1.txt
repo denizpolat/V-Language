@@ -1,0 +1,5 @@
+int func a(a:int[])
+var a: int[2];
+for a:= a[] to 17 by 1 a := a+1; endfor;
+endfunc
+

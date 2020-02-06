@@ -1,0 +1,7 @@
+int func a()
+var d:int[5], e:real[], sum:int;
+while d[] and e[1] do
+sum := sum+e;
+endwhile;
+endfunc
+

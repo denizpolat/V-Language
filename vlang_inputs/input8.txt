@@ -1,0 +1,33 @@
+var globe:int, var1:int;
+var vr2:real;
+int func func1(firstval:int, secval:int, addval:int)
+var sum:int, temp:int;
+while temp >= 0 and temp <= secval do
+read this[temp];
+endwhile;
+for a:=0e1 to secval by 2e1
+if secval > 4e2 then sum := secval mod -2e3; 
+else if secval <> 0e0 then sum := secval div 45e0; endif; endif;
+sum := sum + addval;
+endfor;
+print "sum of all elements is", sum;
+return sum;
+endfunc
+
+real func func2(sum:int, var1:int, var2:int)
+var total:real, avg:real;
+total := var2-var1;
+for a:=0 to 10
+for b:=0 to var1
+for c:=0 to var2 by 2
+if a>b then sum:=sum+a; else sum:= sum-a; endif;
+endfor; endfor; endfor;
+avg := sum / total;
+return avg;
+endfunc
+
+real func func3()
+print "the useless function works for, umm, \"nothing \"";
+endfunc
+
+

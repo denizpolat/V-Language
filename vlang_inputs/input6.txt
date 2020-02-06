@@ -1,0 +1,17 @@
+var deniz:int, cb:int, reel:real;
+int func kompaylir(deniz:int)
+var deniz:int;
+deniz := 12e3;
+if cb then de := 561; if reel then cb := 25e1; else cb:= 67e1; endif; endif;
+while deniz do
+deniz:= deniz+a[1e0];
+zurna := zurna + 1e4;
+if cb then de := 5e1; if cb then cb := 25e1; else cb:= 67e1; endif; endif;
+if deniz then deniz := 5e1; else deniz:= 3e1; endif;
+endwhile;
+% 6. Vector extension [ ] can only be used in a parameter list.
+for a[17e3+45E-4] := 5e3 + 3e0*10E-23 to 456e234
+deniz:= deniz+a[1e0];
+endfor;
+return deniz;
+endfunc
